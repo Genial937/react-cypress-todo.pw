@@ -9,10 +9,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Node 16.x # Specifies node versions
+        uses: actions/setup-node@v3
 
-      - uses: actions/setup-node@v1
+      - uses: microsoft/playwright-github-action@v1  # uses 
 
-      - uses: microsoft/playwright-github-action@v1
+      - name: Install package
+        run: yarn add -D @playwright/test # Installs playwright tests
 
+      - name: Download browsers
+        run: npx playwright install # Downloads browsers
+        
       - name: Install dependencies and run tests
-        run: npx playwright test tests
+        run: npx playwright test test # Run tetsts
