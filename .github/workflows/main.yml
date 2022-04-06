@@ -23,4 +23,4 @@ jobs:
         run: npx playwright install # Downloads browsers
         
       - name: Install dependencies and run tests
-        run: npx playwright test test # Run tetsts
+        run: npx playwright test tests # Run tests
